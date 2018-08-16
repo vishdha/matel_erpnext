@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include matel_erpnext *.css
+recursive-include matel_erpnext *.csv
+recursive-include matel_erpnext *.html
+recursive-include matel_erpnext *.ico
+recursive-include matel_erpnext *.js
+recursive-include matel_erpnext *.json
+recursive-include matel_erpnext *.md
+recursive-include matel_erpnext *.png
+recursive-include matel_erpnext *.py
+recursive-include matel_erpnext *.svg
+recursive-include matel_erpnext *.txt
+recursive-exclude matel_erpnext *.pyc
