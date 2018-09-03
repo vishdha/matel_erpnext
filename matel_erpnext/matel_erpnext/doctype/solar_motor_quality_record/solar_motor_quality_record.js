@@ -9,7 +9,7 @@ frappe.ui.form.on('Solar Motor Quality Record', {
 
 frappe.ui.form.on('Load Condition', {
 	idc: function(frm, cdt, cdn){
-		// Calculate when change Cantitate value
+		// Calculate when change IDC value
 		var d = locals[cdt][cdn];
 		if(d.vdc){
 			frappe.model.set_value(cdt, cdn, "pdc_kw", d.idc * d.vdc)
@@ -17,11 +17,31 @@ frappe.ui.form.on('Load Condition', {
 		}
 	},
 	vdc:  function(frm, cdt, cdn){
-		// Calculate when change Pert value
+		// Calculate when change VDC value
 		var d = locals[cdt][cdn];
 		if(d.idc){
 			frappe.model.set_value(cdt, cdn, "pdc_kw", d.idc * d.vdc)
 			refresh_field("load_conditon");
+		}
+	}
+});
+
+
+frappe.ui.form.on('No Load Condition', {
+	idc: function(frm, cdt, cdn){
+		// Calculate when change IDC value
+		var d = locals[cdt][cdn];
+		if(d.vdc){
+			frappe.model.set_value(cdt, cdn, "pdc_kw", d.idc * d.vdc)
+			 refresh_field("load_condition");
+		}
+	},
+	vdc:  function(frm, cdt, cdn){
+		// Calculate when change VDC value
+		var d = locals[cdt][cdn];
+		if(d.idc){
+			frappe.model.set_value(cdt, cdn, "pdc_kw", d.idc * d.vdc)
+			refresh_field("no_load_conditon");
 		}
 	}
 });
